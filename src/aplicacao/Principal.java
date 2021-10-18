@@ -1,5 +1,7 @@
 package aplicacao;
 
+import dados.FraseDois;
+import dados.FraseUm;
 import modelo.Gerador;
 
 public class Principal {
@@ -8,12 +10,9 @@ public class Principal {
 		
 		Gerador gerador = new Gerador();
 		
-		gerador.gerarFrase();
-		
-		
 		System.out.println("Frase gerada:");
 		System.out.print(gerador.gerarFrase());
-		
+
 	}
 
 }
