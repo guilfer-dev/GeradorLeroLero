@@ -1,3 +1,5 @@
+const allPhrases = [FirstPhrase, SecondPhrase, ThirdPhrase, FourthPhrase]
+
 class LeroLeroGenerator {
 
     randomPhraseFromList(phrase) {
@@ -7,17 +9,14 @@ class LeroLeroGenerator {
 
     generate() {
 
-        const phaseOne = this.randomPhraseFromList(FirstPhrase);
-        const phaseTwo = this.randomPhraseFromList(SecondPhrase);
-        const phaseThree = this.randomPhraseFromList(ThirdPhrase);
-        const phaseFour = this.randomPhraseFromList(FourthPhrase);
-
-        return `${phaseOne} ${phaseTwo} ${phaseThree} ${phaseFour}`;
+        const selectedPhrases = allPhrases.map(phrase => this.randomPhraseFromList(phrase));
+        const finalPhrase = `${selectedPhrases[0]} ${selectedPhrases[1]} ${selectedPhrases[2]} ${selectedPhrases[3]}`
+        return finalPhrase;
     }
 
-    printGeneratedPhrase() {
+    printGeneratedPhrase(HTMLId) {
         const finalPhrase = this.generate();
-        document.getElementById('new-phrase').innerHTML = finalPhrase;
+        document.getElementById(HTMLId).innerHTML = finalPhrase;
         return finalPhrase
     }
 
