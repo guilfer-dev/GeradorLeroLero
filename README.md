@@ -26,7 +26,7 @@ Também é possível baixar o arquivo OneLineGenerator.html, tudo que é necess�
 ### Explicação do código em uma linha: 
 
 ```html
-<button class="button" onclick='document.getElementById("new-phrase").innerHTML = [].map(phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" ")'>Gerar lero-lero</button>
+<button class="button" onclick='body.append(document.createElement("li", ["... todas as frases em 4 arrays..."].map(phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" "))'>Gerar lero-lero</button>
 ```
  
 
@@ -38,12 +38,12 @@ Também é possível baixar o arquivo OneLineGenerator.html, tudo que é necess�
 
 _Essa é a parte JavaScript de verdade:_
 ```javascript
-document.getElementById("new-phrase").innerHTML = ["... todas as frases em 4 arrays..."].map(phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" ");
+body.append(document.createElement("li", ["... todas as frases em 4 arrays..."].map(phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" "));
 ```
 
 ```javascript
-document.getElementById("new-phrase").innerHTM =
-// O javascript se integram com o HTML e enxerga cada elemento e sub-elemento, como uma grande arvore de componente, neste caso estamos atribuindo um valor dentro dentro do elemento identificado pelo ID "new-phrase".
+body.append(document.createElement("li", 
+// O javascript se integram com o HTML e enxerga cada elemento e sub-elemento, como uma grande arvore de componente, neste caso estamos criando um li (item de lista) dentro do body da página, que  é gerado por padrão pelo navegador.
 ```
 
 ```javascript
