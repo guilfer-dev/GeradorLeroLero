@@ -26,41 +26,56 @@ Também é possível baixar o arquivo OneLineGenerator.html, tudo que é necess�
 ### Explicação do código em uma linha: 
 
 ```html
-<button class="button" onclick='body.append(document.createElement("li", ["... todas as frases em 4 arrays..."].map(phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" "))'>Gerar lero-lero</button>
+<button class="button" onclick='body.append(
+document.createElement("li", ["... todas as frases em 4 arrays..."].map(
+phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" "))'>Gerar lero-lero</button>
 ```
  
 
  
 ```html
 <button class="button" onclick= onclick="" >Gerar lero-lero</button>
- <!-- O atributo onclick recebe o código que será executado assim que o botão gerado pela tag <button> for pressionada pelo usuário. -->
+ <!-- O atributo onclick recebe o código que será executado assim que o botão gerado pela
+tag <button> for pressionada pelo usuário. -->
 ```
 
 _Essa é a parte JavaScript de verdade:_
 ```javascript
-body.append(document.createElement("li", ["... todas as frases em 4 arrays..."].map(phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" "));
+body.append(document.createElement("li", ["... todas as frases em 4 arrays..."].map(
+phrase => phrase[Math.floor(Math.random() * phrase.length)]).join(" "));
 ```
 
 ```javascript
 body.append(document.createElement("li", 
-// O javascript se integram com o HTML e enxerga cada elemento e sub-elemento, como uma grande arvore de componente, neste caso estamos criando um li (item de lista) dentro do body da página, que  é gerado por padrão pelo navegador.
+/* O javascript se integram com o HTML e enxerga cada elemento e sub-elemento,
+como uma grande arvore de componente, neste caso estamos criando um li (item de lista)
+dentro do body da página, que  é gerado por padrão pelo navegador. */
 ```
 
 ```javascript
 ["... todas as frases em 4 arrays..."].map( ()=> {})
-// Agora usamos o metodo de arrays chamado "map" para retornar um novo array utilizando o resultado das função passada como parametro, para cada item do array original, que neste caso é um array de arrays.
+/* Agora usamos o metodo de arrays chamado "map" para retornar um novo array utilizando o
+resultado das função passada como parametro, para cada item do array original, que neste 
+caso é um array de arrays.*/
 ```
 
 _Agora é a parte mais "complexa":_
 ```javascript
 (phrase => phrase[Math.floor(Math.random() * phrase.length)])
-// Cada elemento do array será identificado como "phrase" em cada loop do método "map". Cada subarray então terá um item selecionado aleatóriamente, entre a primeira e última posição. Para isso usamos utilizando Math.random() combinado com o Math.floor: um gera um numero aleatório com casas decimais, que será multiplicado pelo tamanho do array e então o outro arredondada o valor para que seja interpretado como uma posição no array phrase. Ex: phrase[7].
+/* Cada elemento do array será identificado como "phrase" em cada loop do método "map".
+Cada subarray então terá um item selecionado aleatóriamente, entre a primeira e última posição.
+Para isso usamos utilizando Math.random() combinado com o Math.floor: um gera um numero aleatório
+com casas decimais, que será multiplicado pelo tamanho do array e então o outro arredondada o valor
+para que seja interpretado como uma posição no array phrase. Ex: phrase[7].*/
 ```
 
 
 ```javascript
 .join(" ")
-// Após isso encerraremos a função com outro método de array que tomara o retorno do map e agregara todas as frases selecionadas em uma unica string. Esse método é o "join", que recebe como parametro o que gostariamos de usar como separador entre todos os itens que serão agregados. Em nosso caso, as frases foram pensadas para serem separadas por espaço, mas poderia ser virgula se fizesse sentido.
+/* Após isso encerraremos a função com outro método de array que tomara o retorno do map e agregara
+todas as frases selecionadas em uma unica string. Esse método é o "join", que recebe como parametro
+o que gostariamos de usar como separador entre todos os itens que serão agregados. Em nosso caso,
+as frases foram pensadas para serem separadas por espaço, mas poderia ser virgula se fizesse sentido.*/
 ```
 
 Fazer todo o código em uma unica função foi algo bem legal. Tem bastante gente na comunidade que realiza desafios similares, embora muito mais complexos.
